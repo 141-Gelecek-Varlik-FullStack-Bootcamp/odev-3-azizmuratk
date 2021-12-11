@@ -1,1 +1,5 @@
-"# odev-3-azizmuratk" 
+# Login & Crud
+
+- Login transactions,
+- Some data annotation,
+- CRUD transactions
