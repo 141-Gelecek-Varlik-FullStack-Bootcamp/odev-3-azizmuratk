@@ -1,3 +1,6 @@
+using AlwaysLowPrice.API.Infrastructure;
+using AlwaysLowPrice.Service.User;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +29,13 @@ namespace AlwaysLowPrice.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // mapping inject in the project
+            var _mappingProfile = new MapperConfiguration(mp => { 
+                mp.AddProfile(new MappingProfile()); 
+            });
+            IMapper mapper = _mappingProfile.CreateMapper();
+            services.AddTransient<IUserService, UserService>();
+            services.AddSingleton(mapper);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
