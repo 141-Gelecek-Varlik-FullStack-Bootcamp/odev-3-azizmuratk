@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlwaysLowPrice.DB\AlwaysLowPrice.DB.csproj" />
+    <ProjectReference Include="..\AlwaysLowPrice.Model\AlwaysLowPrice.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Product\" />
+    <Folder Include="Category\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+</Project>
